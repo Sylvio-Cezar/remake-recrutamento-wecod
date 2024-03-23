@@ -1,0 +1,48 @@
+<div class="flex justify-center items-center h-full">
+  <app-card>
+    <div class="flex min-h-full flex-1 flex-col justify-center px-6 py-12 lg:px-8">
+      <div class="sm:mx-auto sm:w-full sm:max-w-sm">
+        <img src="./assets/wecod_logo_preto.png" alt="Wecod" class="mx-auto h-36 w-auto" />
+        <h2 class="mt-10 text-center text-2xl font-bold leading-9 tracking-tight text-brown-primary">
+          Entre com suas credenciais de acesso
+        </h2>
+      </div>
+      <app-form (onSubmit)="submitLogin()">
+        <app-basic-input
+        inputType="email"
+        inputId="inpEmail"
+        inputLabel="inpEmail"
+        textLabel="Digite seu e-mail"
+        [inputRequired]="true"
+        [inputError]="isInvalidEmail()"
+        [inputErrorMessage]="emailError"
+        [inputTouched]="emailTouched"
+        (click)="isEmailTouched()"
+        (valueChange)=getInputEmail($event)
+        ></app-basic-input>
+
+        <app-basic-input
+        inputType="password"
+        inputId="inpPass"
+        inputLabel="inpPass"
+        textLabel="Digite sua senha"
+        [inputError]="isInvalidPass()"
+        [inputErrorMessage]="passError"
+        [inputTouched]="passTouched"
+        (click)="isPassTouched()"
+        inputAutocomplete="current-password"
+        (valueChange)=getInputPass($event)
+        ></app-basic-input>
+
+        <div class="mt2">
+          <app-button-primary
+            typeBtn="submit"
+            textBtn="Entrar"
+            [disabledBtn]="isInvalidLogin()"
+            >
+          </app-button-primary>
+        </div>
+    </app-form>
+    </div>
+  </app-card>
+</div>

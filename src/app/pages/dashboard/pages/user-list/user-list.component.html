@@ -1,0 +1,21 @@
+<div class="flex justify-center items-center md:mt-10 lg:mt-20 text-brown-primary">
+  <app-card class="w-4/5 md:ml-52 sm:ml-24">
+    <table class="table-auto w-full border-solid border-4 border-orange-primary">
+      <tr class="bg-orange-primary text-white h-16">
+        <th>Foto</th>
+        <th>Nome</th>
+        <th>Sobrenome</th>
+        <th>Email</th>
+        <th>Telefone </th>
+      </tr>
+      <tr *ngFor="let user of users" class="border-solid border-b-4 border-orange-primary bg-white hover:bg-orange-100 cursor-pointer h-12" [routerLink]="['/dashboard/user-list/user-details', user.email]">
+        <th><img [src]="user?.picture?.thumbnail" [alt]="user?.name?.first" class="rounded-full m-auto"></th>
+        <th>{{ user?.name?.first }}</th>
+        <th>{{ user?.name?.last }}</th>
+        <th>{{ user?.email }}</th>
+        <th>{{ user?.phone }}</th>
+      </tr>
+    </table>
+  </app-card>
+</div>
+

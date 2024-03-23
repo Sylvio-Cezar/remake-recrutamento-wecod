@@ -1,0 +1,7 @@
+<button [disabled]="disabledBtn" [type]="typeBtn" [name]="nameBtn" [id]="idBtn" (click)="onClick.emit()"
+  class="flex w-full justify-center rounded-md bg-orange-primary px-3 py-1.5
+  text-sm font-regular leading-6 text-white shadow-sm hover:bg-orange-secondary
+  focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2
+  focus-visible:outline-orange-secondary" [ngClass]="disabledBtn ? 'opacity-50 hover:bg-orange-primary' : ''">
+  {{ textBtn }}
+</button>
