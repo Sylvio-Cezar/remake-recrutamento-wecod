@@ -9,7 +9,7 @@
       focus:outline-none focus:border-orange-primary focus:ring-1 focus:ring-orange-primary
       disabled:bg-slate-50 disabled:text-slate-500 disabled:border-slate-200 disabled:shadow-none"
       [ngClass]="inputError && inputTouched ? 'border-red-primary' : ''" />
-    <button type="button" data-hs-toggle-password='{
+    <button *ngIf="(inputType == 'password' || inputType == 'text')" type="button" data-hs-toggle-password='{
           "target": `${inputId}`
         }'
       class="absolute top-0 end-0 p-3.5 rounded-e-md dark:focus:outline-none dark:focus:ring-1 dark:focus:ring-gray-600">
