@@ -1,9 +1,8 @@
 <div class="flex justify-center items-center md:mt-10 lg:mt-20 text-brown-primary">
-  <app-card class="md:ml-52 sm:ml-24 mt-16">
-    <img
-      class="rounded-full m-auto w-44 h-44 border-4 border-orange-primary"
+  <app-card [hasBorder]="true" class="md:ml-52 sm:ml-24 mt-20 transform rounded-xl h-40 w-40 sm:h-64 sm:w-64 transition duration-500 hover:scale-110">
+    <img class="rounded-full absolute right-4 left-4 -mt-28 m-auto w-44 h-44 border-4 border-orange-primary"
       [src]="user?.picture?.large" [alt]="user?.name?.first"/>
-      <h1 class="text-center font-bold text-2xl text-orange-primary">{{ user?.name?.first }} {{ user?.name?.last }}</h1>
+      <h1 class="text-center font-bold text-2xl text-orange-primary mt-20">{{ user?.name?.first }} {{ user?.name?.last }}</h1>
     <div class="w-full text-start mt-5">
       <h1 class="text-center font-bold text-lg">Dados pessoais</h1>
       <p><b>E-mail: </b>{{ user?.email }}</p>

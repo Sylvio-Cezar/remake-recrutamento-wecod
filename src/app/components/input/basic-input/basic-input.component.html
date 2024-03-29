@@ -1,14 +1,27 @@
 <div class="py-2">
-  <label [for]="inputLabel" class="block text-sm font-medium leading-6 text-brown-primary">
+  <!-- <label [for]="inputLabel" class="block text-sm font-medium leading-6 text-brown-primary">
     {{ textLabel }}
-  </label>
+  </label> -->
   <div class="relative">
-    <input #input [id]="inputId" name="inputName" [type]="inputType" [placeholder]="inputPlaceholder"
+    <!-- <input #input [id]="inputId" name="inputName" [type]="inputType" [placeholder]="inputPlaceholder"
       (input)="onInputChange($event)" [autocomplete]="inputAutocomplete" [required]="inputRequired"
       class="mt-1 block w-full px-3 py-2 bg-white border border-slate-300 rounded-md text-sm shadow-sm placeholder-slate-400
       focus:outline-none focus:border-orange-primary focus:ring-1 focus:ring-orange-primary
       disabled:bg-slate-50 disabled:text-slate-500 disabled:border-slate-200 disabled:shadow-none"
-      [ngClass]="inputError && inputTouched ? 'border-red-primary' : ''" />
+      [ngClass]="inputError && inputTouched ? 'border-red-primary' : ''" /> -->
+    <input #input [id]="inputId" name="inputName" [type]="inputType" [placeholder]="inputPlaceholder"
+      (input)="onInputChange($event)" [autocomplete]="inputAutocomplete" [required]="inputRequired"
+      class="peer w-full h-full bg-transparent text-gray-700 font-sans font-normal outline outline-0 focus:outline-0 disabled:bg-orange-300 disabled:border-0 transition-all placeholder-shown:border placeholder-shown:border-t-orange-primary border focus:border-2 border-t-transparent focus:border-t-transparent text-sm px-3 py-2.5 rounded-[7px] border-orange-primary focus:border-orange-primary ring-0 focus:ring-0"
+      placeholder=" " [ngClass]="inputError && inputTouched ? 'border-red-600 focus:border-red-600 placeholder-shown:border-red-600' : ''" />
+    <label
+      class="flex w-full h-full select-none pointer-events-none absolute left-0 font-normal !overflow-visible truncate peer-placeholder-shown:text-blue-gray-500 leading-tight peer-focus:leading-tight peer-disabled:text-transparent peer-disabled:peer-placeholder-shown:text-blue-gray-500 transition-all -top-1.5 peer-placeholder-shown:text-sm text-[11px] peer-focus:text-[11px] before:content[' '] before:block
+      before:box-border before:w-2.5 before:h-1.5 before:mt-[6.5px] before:mr-1 peer-placeholder-shown:before:border-transparent before:rounded-tl-md before:border-t peer-focus:before:border-t-2 before:border-l peer-focus:before:border-l-2 before:pointer-events-none before:transition-all peer-disabled:before:border-transparent after:content[' '] after:block after:flex-grow after:box-border after:w-2.5 after:h-1.5
+      after:mt-[6.5px] after:ml-1 peer-placeholder-shown:after:border-transparent after:rounded-tr-md after:border-t peer-focus:after:border-t-2 after:border-r peer-focus:after:border-r-2 after:pointer-events-none after:transition-all peer-disabled:after:border-transparent peer-placeholder-shown:leading-[3.75] text-gray-600 peer-focus:text-orange-primary before:border-orange-secondary peer-focus:before:!border-orange-secondary
+      after:border-orange-primary peer-focus:after:!border-orange-secondary"
+      [ngClass]="inputError && inputTouched ? 'peer-focus:text-red-600 before:border-red-600 peer-focus:before:!border-red-600
+      after:border-red-600 peer-focus:after:!border-red-600' : ''">
+      {{ textLabel }}
+    </label>
     <button *ngIf="(inputType == 'password' || inputType == 'text')" type="button" data-hs-toggle-password='{
           "target": `${inputId}`
         }'
@@ -36,7 +49,7 @@
       </svg>
     </button>
     <div *ngIf="inputError && inputTouched">
-      <small class="block text-sm font-medium text-red-primary">
+      <small class="block text-xs italic font-normal text-red-600">
         {{ inputErrorMessage }}
       </small>
     </div>
